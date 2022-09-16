@@ -1,17 +1,17 @@
 import random
+import menu
+import sys
+eats = int(sys.argv[1])
 
-def choice_mac(eats = 1):
+def choice_mac(eats):
     """今日食べるべきマックを選びます。
        
        いつもは頼まないメニューが食べたくなったら使ってね。
     """
-    menu_list = ["ビックマック",
-                 "チーズバーガー",
-                 "フィレオフィッシュ",
-                 ]
     
     for eat in range(1, eats):
-        choice = random.choice(menu_list)
+        choice = random.choice(menu.menu_list)
         print(str(eat) + ":" + choice + "!!!")
 
-choice_mac(3)
+if __name__=='__main__':
+    choice_mac(eats)
