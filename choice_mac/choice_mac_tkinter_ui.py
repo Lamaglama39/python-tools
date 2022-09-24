@@ -4,10 +4,11 @@ import tkinter.ttk as ttk
 import random
 import menu
 
+
 class Application(tk.Frame):
     def __init__(self, master=None):
         super().__init__(master)
-        self.master.geometry("600x500")
+        self.master.geometry("750x500")
         self.master.title("マクドナルド　チョイスアプリ")
         #アイコン変更
         icon_path = 'hamburger.ico'
@@ -64,25 +65,44 @@ class Application(tk.Frame):
         self.textbox_drink_left.pack()
 
         # 右フレーム　出力テキストボックス
-        self.label = tk.Label(self.frame_right_main, text='メインはこれです！')
-        self.label.pack()
-        self.label = tk.Label(self.frame_right_side, text='サイドはこれです！')
-        self.label.pack()
-        self.label = tk.Label(self.frame_right_drink, text='ドリンクはこれです！')
-        self.label.pack()
+        self.label_main = tk.Label(self.frame_right_main, width=25, text='メインはこれです！')
+        self.label_main.pack(side=tk.TOP)
+        self.label_side = tk.Label(self.frame_right_side, width=25, text='サイドはこれです！')
+        self.label_side.pack(side=tk.TOP)
+        self.label_drink = tk.Label(self.frame_right_drink, width=25, text='ドリンクはこれです！')
+        self.label_drink.pack(side=tk.TOP)
 
     #出力ボタン押下後の実行処理
     def input_handler(self):
     #メイン
-        text = self.textbox_main_left.get()
-        for main_num in range(int(text)):
+        main_text = self.textbox_main_left.get()
+        for main_num in range(int(main_text)):
             choice = random.choice(menu.main_list)
             main_number = str(main_num + 1)
-            main_text = (f'main{main_number}: {choice}')
-            message = tk.Message()
-            message.pack(self.frame_right_main, side=tk.TOP)
-            message['text'] = main_text
+            main_answer = (f'main{main_number}: {choice}')
+            self.main_message = tk.Message(self.frame_right_main)
+            self.main_message.pack(side=tk.TOP)
+            self.main_message['text'] = main_answer
 
+            #サイド
+        side_text = self.textbox_side_left.get()
+        for side_num in range(int(side_text)):
+            choice = random.choice(menu.side_list)
+            side_number = str(side_num + 1)
+            side_answer = (f'side{side_number}: {choice}')
+            self.side_message = tk.Message(self.frame_right_side)
+            self.side_message.pack(side=tk.TOP)
+            self.side_message['text'] = side_answer
+
+            #ドリンク
+        drink_text = self.textbox_drink_left.get()
+        for drink_num in range(int(drink_text)):
+            choice = random.choice(menu.drink_list)
+            drink_number = str(drink_num + 1)
+            drink_answer = (f'drink{drink_number}: {choice}')
+            self.drink_message = tk.Message(self.frame_right_drink)
+            self.drink_message.pack(side=tk.TOP)
+            self.drink_message['text'] = drink_answer
 
 def main():
     root = tk.Tk()
