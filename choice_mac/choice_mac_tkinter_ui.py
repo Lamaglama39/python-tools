@@ -1,4 +1,3 @@
-# tkinter‚ÌƒCƒ“ƒ|[ƒg
 import tkinter as tk
 import tkinter.ttk as ttk
 import random
@@ -9,19 +8,19 @@ class Application(tk.Frame):
     def __init__(self, master=None):
         super().__init__(master)
         self.master.geometry("750x500")
-        self.master.title("ƒ}ƒNƒhƒiƒ‹ƒh@ƒ`ƒ‡ƒCƒXƒAƒvƒŠ")
-        #ƒAƒCƒRƒ“•ÏX
+        self.master.title("ãƒã‚¯ãƒ‰ãƒŠãƒ«ãƒ‰ã€€ãƒãƒ§ã‚¤ã‚¹ã‚¢ãƒ—ãƒª")
+        #ã‚¢ã‚¤ã‚³ãƒ³å¤‰æ›´
         icon_path = 'hamburger.ico'
         self.master.iconbitmap(default=icon_path)
 
-        #ƒtƒŒ[ƒ€ì¬
-        #ã•”ƒtƒŒ[ƒ€
+        #ãƒ•ãƒ¬ãƒ¼ãƒ ä½œæˆ
+        #ä¸Šéƒ¨ãƒ•ãƒ¬ãƒ¼ãƒ 
         self.frame_top = tk.Frame(self.master, pady=5, padx=5, relief=tk.RAISED, borderwidth=1)
         self.frame_top.pack(fill=tk.X)
-        #¶ƒtƒŒ[ƒ€
+        #å·¦ãƒ•ãƒ¬ãƒ¼ãƒ 
         self.frame_left = tk.Frame(self.master, pady=5, padx=5, width=30, relief=tk.RAISED, borderwidth=1, bg="white")
         self.frame_left.pack(side=tk.LEFT, fill=tk.Y)
-        #‰EƒtƒŒ[ƒ€
+        #å³ãƒ•ãƒ¬ãƒ¼ãƒ 
         self.frame_right_main = tk.Frame(self.master, pady=5, padx=5, relief=tk.RIDGE, borderwidth=1)
         self.frame_right_main.pack(side=tk.LEFT, fill=tk.Y)
         self.frame_right_side = tk.Frame(self.master, pady=5, padx=5, relief=tk.RIDGE, borderwidth=1)
@@ -29,25 +28,25 @@ class Application(tk.Frame):
         self.frame_right_drink = tk.Frame(self.master, pady=5, padx=5, relief=tk.RIDGE, borderwidth=1)
         self.frame_right_drink.pack(side=tk.LEFT, fill=tk.Y)
 
-        #ƒEƒBƒWƒFƒbƒgì¬
+        #ã‚¦ã‚£ã‚¸ã‚§ãƒƒãƒˆä½œæˆ
         self.create_widgets()
 
     def create_widgets(self):
-        #ã•”ƒtƒŒ[ƒ€@ƒ{ƒ^ƒ“
-        #ƒƒjƒ…[o—Íƒ{ƒ^ƒ“
-        self.button1 = tk.Button(self.frame_top, text='o—Í',
+        #ä¸Šéƒ¨ãƒ•ãƒ¬ãƒ¼ãƒ ã€€ãƒœã‚¿ãƒ³
+        #ãƒ¡ãƒ‹ãƒ¥ãƒ¼å‡ºåŠ›ãƒœã‚¿ãƒ³
+        self.button1 = tk.Button(self.frame_top, text='å‡ºåŠ›',
                                  command=self.input_handler)
-        #ƒAƒvƒŠI—¹ƒ{ƒ^ƒ“
-        self.button2 = tk.Button(self.frame_top, text='”ƒ‚¢‚És‚­',
+        #ã‚¢ãƒ—ãƒªçµ‚äº†ãƒœã‚¿ãƒ³
+        self.button2 = tk.Button(self.frame_top, text='è²·ã„ã«è¡Œã',
                     command=self.master.destroy)
         self.button1.pack(side=tk.LEFT)
         self.button2.pack(side=tk.RIGHT)
 
-        # ¶ƒtƒŒ[ƒ€@“ü—ÍƒeƒLƒXƒgƒ{ƒbƒNƒX
-        self.label__top_left = tk.Label(self.frame_left,text = '”š‚ğ“ü‚ê‚Äo—Í‚ğ‰Ÿ‚µ‚Ä‚Ë', bg="white")
-        self.label__main_left = tk.Label(self.frame_left,text = '`ƒƒCƒ“`', bg="white")
-        self.label__side_left = tk.Label(self.frame_left,text = '`ƒTƒCƒh`', bg="white")
-        self.label__drink_left = tk.Label(self.frame_left,text = '`ƒhƒŠƒ“ƒN`', bg="white")
+        # å·¦ãƒ•ãƒ¬ãƒ¼ãƒ ã€€å…¥åŠ›ãƒ†ã‚­ã‚¹ãƒˆãƒœãƒƒã‚¯ã‚¹
+        self.label__top_left = tk.Label(self.frame_left,text = 'æ•°å­—ã‚’å…¥ã‚Œã¦å‡ºåŠ›ã‚’æŠ¼ã—ã¦ã­', bg="white")
+        self.label__main_left = tk.Label(self.frame_left,text = 'ï½ãƒ¡ã‚¤ãƒ³ï½', bg="white")
+        self.label__side_left = tk.Label(self.frame_left,text = 'ï½ã‚µã‚¤ãƒ‰ï½', bg="white")
+        self.label__drink_left = tk.Label(self.frame_left,text = 'ï½ãƒ‰ãƒªãƒ³ã‚¯ï½', bg="white")
 
         self.textbox_main_left = tk.Entry(self.frame_left, width=20, relief=tk.RAISED, bd=2)
         self.textbox_side_left = tk.Entry(self.frame_left, width=20, relief=tk.RAISED, bd=2)
@@ -64,16 +63,16 @@ class Application(tk.Frame):
         self.label__drink_left.pack(padx=5)
         self.textbox_drink_left.pack()
 
-        # ‰EƒtƒŒ[ƒ€@o—ÍƒeƒLƒXƒgƒ{ƒbƒNƒX
-        self.label_main = tk.Label(self.frame_right_main, width=25, text='ƒƒCƒ“‚Í‚±‚ê‚Å‚·I')
+        # å³ãƒ•ãƒ¬ãƒ¼ãƒ ã€€å‡ºåŠ›ãƒ†ã‚­ã‚¹ãƒˆãƒœãƒƒã‚¯ã‚¹
+        self.label_main = tk.Label(self.frame_right_main, width=25, text='ãƒ¡ã‚¤ãƒ³ã¯ã“ã‚Œã§ã™ï¼')
         self.label_main.pack(side=tk.TOP)
-        self.label_side = tk.Label(self.frame_right_side, width=25, text='ƒTƒCƒh‚Í‚±‚ê‚Å‚·I')
+        self.label_side = tk.Label(self.frame_right_side, width=25, text='ã‚µã‚¤ãƒ‰ã¯ã“ã‚Œã§ã™ï¼')
         self.label_side.pack(side=tk.TOP)
-        self.label_drink = tk.Label(self.frame_right_drink, width=25, text='ƒhƒŠƒ“ƒN‚Í‚±‚ê‚Å‚·I')
+        self.label_drink = tk.Label(self.frame_right_drink, width=25, text='ãƒ‰ãƒªãƒ³ã‚¯ã¯ã“ã‚Œã§ã™ï¼')
         self.label_drink.pack(side=tk.TOP)
 
     # def choice_exec(self, menu_type):
-    #         #“ü—Í’læ“¾
+    #         #å…¥åŠ›å€¤å–å¾—
     #     full_menu_lsit = {"main":int(self.textbox_main_left.get()),
     #                       "side":int(self.textbox_side_left.get()),
     #                       "drink":int(self.textbox_drink_left.get())}
@@ -91,14 +90,14 @@ class Application(tk.Frame):
     #         self.menu_message['text'] = menu_answer
 
 
-    #o—Íƒ{ƒ^ƒ“‰Ÿ‰ºŒã‚ÌÀsˆ—
+    #å‡ºåŠ›ãƒœã‚¿ãƒ³æŠ¼ä¸‹å¾Œã®å®Ÿè¡Œå‡¦ç†
     def input_handler(self):
-    #“ü—Í’læ“¾
+    #å…¥åŠ›å€¤å–å¾—
         self.full_menu_lsit = {"main":int(self.textbox_main_left.get()),
                           "side":int(self.textbox_side_left.get()),
                           "drink":int(self.textbox_drink_left.get())}
         def choice_exec(self, menu_type):
-            #“ü—Í’læ“¾
+            #å…¥åŠ›å€¤å–å¾—
             self.full_menu_lsit = {"main":int(self.textbox_main_left.get()),
                           "side":int(self.textbox_side_left.get()),
                           "drink":int(self.textbox_drink_left.get())}
@@ -116,7 +115,7 @@ class Application(tk.Frame):
             self.menu_message.pack(side=tk.TOP)
             self.menu_message['text'] = menu_answer
 
-        #o—Í“à—eì¬
+        #å‡ºåŠ›å†…å®¹ä½œæˆ
             for num in self.full_menu_lsit:
                 if num == "main":
                     choice_exec(self.full_menu_lsit['main'])
@@ -153,7 +152,7 @@ class Application(tk.Frame):
         #     self.main_message.pack(side=tk.TOP)
         #     self.main_message['text'] = main_answer
 
-        #     #ƒTƒCƒh
+        #     #ã‚µã‚¤ãƒ‰
         # side_text = self.textbox_side_left.get()
         # for side_num in range(int(side_text)):
         #     choice = random.choice(menu.side_list)
@@ -163,7 +162,7 @@ class Application(tk.Frame):
         #     self.side_message.pack(side=tk.TOP)
         #     self.side_message['text'] = side_answer
 
-        #     #ƒhƒŠƒ“ƒN
+        #     #ãƒ‰ãƒªãƒ³ã‚¯
         # drink_text = self.textbox_drink_left.get()
         # for drink_num in range(int(drink_text)):
         #     choice = random.choice(menu.drink_list)
