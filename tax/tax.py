@@ -1,6 +1,11 @@
-def tax(price , *,tac_late=1.08):
-    print("print:",price,"tac_late:",tac_late)
-    tax_price = price * tac_late
-    print("tax_price:", tax_price)
+import decimal
 
-tax(100, tac_late=1)
+price = int(input("price: "))
+tax_late = decimal.Decimal(input("tax_late: "))
+
+def tax(price, tax_late=1.08):
+    print("print:",price,"tac_late:",tax_late)
+    tax_price = decimal.Decimal(price * tax_late)
+    print("tax_price:", "{:,}".format(tax_price))
+
+tax(price, tax_late)
