@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import barcode
 from barcode.writer import ImageWriter
 import argparse
